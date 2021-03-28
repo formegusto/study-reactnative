@@ -6,6 +6,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <View style={styles.box}>
+        <Text>Hello! React</Text>
         <Text>Hello! React Native!!</Text>
       </View>
     </View>
@@ -20,6 +21,12 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   box: {
-    backgroundColor: "#0ff",
+    flexDirection: "row",
+    backgroundColor: "#fff",
+    padding: 16,
+    margin: 64,
+    paddingBottom: 0,
+    borderWidth: 1,
+    borderColor: "#E0E0E0",
   },
 });
