@@ -21,7 +21,7 @@ export default function BasicComponent() {
         value={content}
         onChangeText={onChange}
       />
-      <CustomButton onPress={onPress} buttonText="커스텀버튼" />
+      <CustomButton onPress={onPress} buttonText="커스텀버튼" disabled />
     </View>
   );
 }
