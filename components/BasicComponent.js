@@ -1,9 +1,15 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { Alert, StyleSheet, TextInput, View } from "react-native";
 import CustomButton from "../atoms/CustomButton";
 
 export default function BasicComponent() {
   const [content, setContent] = useState("");
+  const [disabled, setDisabled] = useState(false);
+
+  useEffect(() => {
+    if (!content.length) setDisabled(true);
+    else setDisabled(false);
+  }, [content]);
 
   const onChange = useCallback((text) => {
     setContent(text);
@@ -21,7 +27,11 @@ export default function BasicComponent() {
         value={content}
         onChangeText={onChange}
       />
-      <CustomButton onPress={onPress} buttonText="커스텀버튼" disabled />
+      <CustomButton
+        onPress={onPress}
+        buttonText="커스텀버튼"
+        disabled={disabled}
+      />
     </View>
   );
 }
