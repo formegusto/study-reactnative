@@ -1,14 +1,19 @@
 import { StatusBar } from "expo-status-bar";
-import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import React, { useCallback } from "react";
+import { Alert, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 export default function App() {
+  const onPress = useCallback(() => {
+    Alert.alert("React Native Hi!");
+  }, []);
+
   return (
     <View style={styles.container}>
-      <View style={styles.box}>
-        <Text style={styles.first}>Hello! React</Text>
-        <Text>Hello! React Native!!</Text>
-      </View>
+      <TouchableOpacity activeOpacity={0.8} onPress={onPress}>
+        <View style={styles.box}>
+          <Text style={styles.first}>시작하기</Text>
+        </View>
+      </TouchableOpacity>
     </View>
   );
 }
@@ -22,16 +27,12 @@ const styles = StyleSheet.create({
   },
   box: {
     flexDirection: "row",
-    backgroundColor: "#fff",
+    backgroundColor: "#6830CF",
     padding: 16,
-    margin: 64,
-    paddingBottom: 0,
-    borderWidth: 1,
-    borderColor: "#E0E0E0",
   },
   first: {
     fontSize: 20,
-    color: "#ccc",
+    color: "#FFF",
     fontWeight: "600",
     padding: 16,
   },
