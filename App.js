@@ -1,6 +1,8 @@
 import React from "react";
 import { SafeAreaView } from "react-native";
 import Header from "./components/Header";
+import SwiperComponent from "./components/SwiperComponent";
+import TaskModal from "./components/TaskModal";
 import TodoItem from "./components/TodoItem";
 
 export default function App() {
@@ -9,6 +11,7 @@ export default function App() {
       <Header />
       <TodoItem title="밥 먹기" done={true} />
       <TodoItem title="시리얼 먹기" done={false} />
+      <TaskModal />
     </SafeAreaView>
   );
 }
