@@ -2,35 +2,19 @@ import React, { useCallback, useEffect, useState } from "react";
 import { Alert, StyleSheet, TextInput, View } from "react-native";
 import CustomButton from "../atoms/CustomButton";
 
-export default function BasicComponent() {
-  const [content, setContent] = useState("");
-  const [disabled, setDisabled] = useState(false);
-
-  useEffect(() => {
-    if (!content.length) setDisabled(true);
-    else setDisabled(false);
-  }, [content]);
-
-  const onChange = useCallback((text) => {
-    setContent(text);
-  }, []);
-
-  const onPress = useCallback(() => {
-    Alert.alert(content);
-  }, [content]);
-
+export default function BasicComponent(props) {
   return (
     <View style={styles.container}>
       <TextInput
         style={styles.input}
         placeholder="텍스트를 입력해주세요!"
-        value={content}
-        onChangeText={onChange}
+        value={props.content}
+        onChangeText={props.onChange}
       />
       <CustomButton
-        onPress={onPress}
+        onPress={props.onPress}
         buttonText="커스텀버튼"
-        disabled={disabled}
+        disabled={props.disabled}
       />
     </View>
   );

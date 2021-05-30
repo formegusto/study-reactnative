@@ -1,6 +1,6 @@
 import React from "react";
-import BasicComponent from "./components/BasicComponent";
+import BasicContainer from "./containers/BasicContainer";
 
 export default function App() {
-  return <BasicComponent />;
+  return <BasicContainer />;
 }
